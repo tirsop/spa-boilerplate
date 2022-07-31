@@ -4,6 +4,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { About } from 'Pages/About';
 import { Home } from 'Pages/Home';
+import { Details } from 'Pages/Details';
 import { ReportIssue } from 'Pages/ReportIssue';
 import { AppRoute } from 'enums';
 
@@ -32,6 +33,8 @@ export function Router({
         }
       >
         <Route index element={<Home />} />
+        <Route path="restaurant/:id" element={<Details />} />
+        <Route path=":search" element={<Home />} />
         <Route path={AppRoute.About} element={<About />} />
         <Route path={AppRoute.ReportIssue} element={<ReportIssue />} />
       </Route>
