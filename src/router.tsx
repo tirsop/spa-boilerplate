@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { About } from 'Pages/About';
-import { Home } from 'Pages/Home';
 import { Details } from 'Pages/Details';
+import { Home } from 'Pages/Home';
 import { ReportIssue } from 'Pages/ReportIssue';
 import { AppRoute } from 'enums';
 
