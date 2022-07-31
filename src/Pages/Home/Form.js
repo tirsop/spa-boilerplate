@@ -3,8 +3,6 @@ import { useContext } from 'react';
 import { RestContext } from '../../Context/RestContext.js'
 import { Button, ButtonAppearance, ButtonSize } from '@tablecheck/tablekit-button';
 
-// import { Icon } from '@tablecheck/tablekit-icon';
-// import { faSearch } from '@fortawesome/free-solid-svg-icons/faGlobe';
 
 
 
@@ -20,6 +18,7 @@ const getRestaurants = async (location) => {
   if (!autocompleteRes.data.locations) throw new Error("No restaurants in this area.")
   const coordinates = autocompleteRes.data.locations[0].payload.geo
   const searchRes = await api.get(`/shop_search?geo_latitude=${coordinates.lat}&geo_longitude=${coordinates.lon}&shop_universe_id=57e0b91744aea12988000001&locale=en&per_page=5`);
+  console.log(searchRes.data.shops);
   return searchRes.data.shops;
 };
 
