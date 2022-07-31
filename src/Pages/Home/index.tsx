@@ -2,11 +2,9 @@ import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { Outlet } from 'react-router-dom';
 
-
-
 // components
-import Form from './Form.js';
-import List from './List.js';
+import Form from './Form';
+import List from './List';
 // styles
 import { HomeWrapper } from './styles';
 

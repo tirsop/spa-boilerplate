@@ -1,22 +1,14 @@
-import { useContext } from 'react';
-import { RestContext } from '../../Context/RestContext.js'
-import RestaurantCard from './RestaurantCard.js';
+import * as React from 'react';
 
-import styled from '@emotion/styled';
+import { RestContext } from '../../Context/RestContext'
 
-const Grid = styled.div`
-  width: 100%;
-  max-width: 900px;
-  background: #fff;
-  margin: 60px auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 24px;
-  row-gap: 40px;
-`;
+import RestaurantCard from './RestaurantCard';
+// styles
+import { Grid } from './styles.ts';
+
 
 export default function List() {
-  const { restaurants } = useContext(RestContext)
+  const { restaurants } = React.useContext(RestContext)
 
   return (
     <Grid>
