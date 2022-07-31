@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Link, useLocation } from 'react-router-dom';
 
 const Card = styled(Link)`
-  width: calc(33.33% - 10px);
+  text-decoration: none;
 `;
 
 const Img = styled.img`
@@ -24,7 +24,7 @@ export default function RestaurantCard({ slug, name, search_image }) {
   return (
     <Card to={`/${language}/restaurant/${slug}`}>
       <Img src={search_image} />
-      {name}
+      {language === 'ja' ? name[0] : name[1]}
     </Card>
   )
 }

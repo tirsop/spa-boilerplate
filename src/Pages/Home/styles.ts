@@ -20,8 +20,6 @@ export const H1 = styled.h1`
   font-weight: bold;
 `
 export const FormWrapper = styled.div`
-
-
   form {
     display: flex;
     flex-direction: column;

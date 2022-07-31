@@ -9,9 +9,10 @@ const Grid = styled.div`
   max-width: 900px;
   background: #fff;
   margin: 60px auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px;
+  row-gap: 40px;
 `;
 
 export default function List() {
