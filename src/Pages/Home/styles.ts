@@ -42,18 +42,24 @@ export const Grid = styled.div`
   max-width: 900px;
   background: #fff;
   margin: 60px auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 24px;
-  row-gap: 40px;
 `;
 
 export const Card = styled(Link)`
   text-decoration: none;
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
 `;
 
 export const Img = styled.img`
-  width: 100%;
+  width: 20%;
   aspect-ratio: 1.5;
   object-fit: cover;
+  border-radius: 4px;
 `;
+
+export const Name = styled.h1`
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+`
