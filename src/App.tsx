@@ -8,8 +8,8 @@ import { useAsync } from 'react-use';
 import { AppThemeProvider } from 'Common/Theme';
 import { MainWrapper } from 'Layouts';
 import { getI18nextInstance, initI18n } from 'i18n';
-import { RestProvider } from './Context/RestContext.js'
 
+import { RestProvider } from './Context/RestContext.js'
 import { Router } from './router';
 
 export function App(): JSX.Element {

@@ -1,8 +1,10 @@
 import { useLocale } from '../../Hooks/useLocale';
-// import { FaAccessibleIcon } from "react-icons/fa";
+import { FaSun, FaMoon } from "react-icons/fa";
+
+
 
 // styles
-import { Card, Img, Name } from './styles.ts';
+import { Card, Img, Content, Name, Tags, Tag, Price } from './styles.ts';
 
 
 export default function RestaurantCard({
@@ -21,12 +23,18 @@ export default function RestaurantCard({
   return (
     <Card to={`/${language}/restaurant/${slug}`}>
       <Img src={search_image} />
-      <div>
+      <Content>
         <Name>{language === 'ja' ? name[0] : name[1]}</Name>
-        {cuisines && cuisines.map(cuisine => (
-          <p className="">{cuisine}</p>
-        ))}
-      </div>
+        <Tags>
+          {cuisines && cuisines.map(cuisine => (
+            <Tag key={cuisine}>{cuisine.charAt(0).toUpperCase() + cuisine.slice(1)}</Tag>
+          ))}
+        </Tags>
+        <Price>
+          <FaSun /><span>{budget_lunch_min} ~ {budget_lunch_max}</span>
+          <FaMoon /><span>{budget_dinner_min} ~ {budget_dinner_max}</span>
+        </Price>
+      </Content>
     </Card>
   )
 }
