@@ -23,6 +23,9 @@ export default function RestaurantCard({
       <Img src={search_image} />
       <div>
         <Name>{language === 'ja' ? name[0] : name[1]}</Name>
+        {cuisines && cuisines.map(cuisine => (
+          <p className="">{cuisine}</p>
+        ))}
       </div>
     </Card>
   )
