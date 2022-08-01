@@ -18,6 +18,8 @@ export const HomeHeadline = styled(Headline)`
 `;
 
 const medQuer660 = '660px';
+const medQuer450 = '450px';
+const tcPurple = '#7935D2';
 
 // ----------------------------------- SETUP ---------------------------------- //
 export const Grid = styled.div`
@@ -60,7 +62,7 @@ export const FormWrapper = styled.div`
 
 export const Button = styled.button`
   color: #fff;
-  background-color: #7935D2;
+  background-color: ${tcPurple};
   padding: 12px;
   width: 100%;
 `;
@@ -77,6 +79,10 @@ export const Card = styled(Link)`
   flex-wrap: wrap;
   @media (max-width: ${medQuer660}) {
     gap: 0;
+    margin-bottom: 32px;
+  }
+  @media (max-width: ${medQuer450}) {
+    margin-bottom: 16px;
   }
 `;
 
@@ -101,6 +107,7 @@ export const Img = styled.img`
     width: 100%;
     height: 100px;
     border-radius: 4px 4px 0 0;
+    object-position: center;
   }
 `;
 
@@ -124,7 +131,7 @@ export const Tag = styled.p`
 `
 
 export const Price = styled.div`
-  color: #7935D2;
+  color: ${tcPurple};
   span {
     padding: 0 16px 0 8px;
   }
