@@ -17,6 +17,8 @@ export const HomeHeadline = styled(Headline)`
   text-align: center;
 `;
 
+const medQuer660 = '660px';
+
 // ----------------------------------- SETUP ---------------------------------- //
 export const Grid = styled.div`
   width: 100%;
@@ -73,6 +75,9 @@ export const Card = styled(Link)`
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
+  @media (max-width: ${medQuer660}) {
+    gap: 0;
+  }
 `;
 
 export const Content = styled.div`
@@ -80,16 +85,22 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  @media (max-width: ${medQuer660}) {
+    gap: 6px;
+    margin-left: 20px;
+    padding: 16px 0;
+  }
 `;
 
 export const Img = styled.img`
-  max-width: 25%;
+  width: 25%;
   aspect-ratio: 1.5;
   object-fit: cover;
-  border-radius: 4px;
-  @media (max-width: 660px) {
+  border-radius: 4px 0 0 4px;
+  @media (max-width: ${medQuer660}) {
     width: 100%;
     height: 100px;
+    border-radius: 4px 4px 0 0;
   }
 `;
 
