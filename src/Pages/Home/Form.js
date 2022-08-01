@@ -17,7 +17,7 @@ const getRestaurants = async (location) => {
   const autocompleteRes = await api.get(`/autocomplete?locale=en&shop_universe_id=57e0b91744aea12988000001&text=${location.toLowerCase().trim()}`);
   if (!autocompleteRes.data.locations) throw new Error("No restaurants in this area.")
   const coordinates = autocompleteRes.data.locations[0].payload.geo
-  const searchRes = await api.get(`/shop_search?geo_latitude=${coordinates.lat}&geo_longitude=${coordinates.lon}&shop_universe_id=57e0b91744aea12988000001&locale=en&per_page=5`);
+  const searchRes = await api.get(`/shop_search?geo_latitude=${coordinates.lat}&geo_longitude=${coordinates.lon}&shop_universe_id=57e0b91744aea12988000001&locale=en&per_page=12`);
   return searchRes.data.shops;
 };
 

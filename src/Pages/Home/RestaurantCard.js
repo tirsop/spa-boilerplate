@@ -1,28 +1,34 @@
-import { useLocale } from '../../Hooks/useLocale';
+import { Logo } from '@tablecheck/tablekit-logo';
 import { FaSun, FaMoon } from "react-icons/fa";
 
+import { useLocale } from '../../Hooks/useLocale';
 
 
 // styles
-import { Card, Img, Content, Name, Tags, Tag, Price } from './styles.ts';
+import { Card, Img, Content, Name, Tags, Tag, Price, ReplacementImg } from './styles.ts';
 
 
 export default function RestaurantCard({
   slug,
   name,
-  search_image,
-  budget_lunch_min,
-  budget_lunch_max,
-  budget_dinner_min,
-  budget_dinner_max,
-  cuisines,
-  is_smartpay
+  search_image: searchImage,
+  budget_lunch_min: budgetLunchMin,
+  budget_lunch_max: budgetLunchMax,
+  budget_dinner_min: budgetDinnerMin,
+  budget_dinner_max: budgetDinnerMax,
+  cuisines
 }) {
   const language = useLocale();
 
   return (
     <Card to={`/${language}/restaurant/${slug}`}>
-      <Img src={search_image} />
+      {searchImage ? (<Img src={searchImage} />) :
+        <ReplacementImg>
+          <Logo
+            symbolSize="30px"
+            wordingSize="0px"
+          />
+        </ReplacementImg>}
       <Content>
         <Name>{language === 'ja' ? name[0] : name[1]}</Name>
         <Tags>
@@ -31,8 +37,16 @@ export default function RestaurantCard({
           ))}
         </Tags>
         <Price>
-          <FaSun /><span>{budget_lunch_min} ~ {budget_lunch_max}</span>
-          <FaMoon /><span>{budget_dinner_min} ~ {budget_dinner_max}</span>
+          {(budgetLunchMin) &&
+            <div>
+              <FaSun /><span>{budgetLunchMin} ~ {budgetLunchMax}</span>
+            </div>
+          }
+          {(budgetDinnerMin) &&
+            <div>
+              <FaMoon /><span>{budgetDinnerMin} ~ {budgetDinnerMax}</span>
+            </div>
+          }
         </Price>
       </Content>
     </Card>

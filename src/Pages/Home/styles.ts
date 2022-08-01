@@ -98,6 +98,7 @@ export const Content = styled.div`
   }
 `;
 
+
 export const Img = styled.img`
   width: 25%;
   aspect-ratio: 1.5;
@@ -108,6 +109,18 @@ export const Img = styled.img`
     height: 100px;
     border-radius: 4px 4px 0 0;
     object-position: center;
+  }
+`;
+export const ReplacementImg = styled.div`
+  width: 25%;
+  aspect-ratio: 1.5;
+  display: flex;
+  justify-content: center;
+  border-radius: 4px 0 0 4px;
+  @media (max-width: ${medQuer660}) {
+    width: 100%;
+    height: 100px;
+    border-radius: 4px 4px 0 0;
   }
 `;
 
@@ -132,6 +145,7 @@ export const Tag = styled.p`
 
 export const Price = styled.div`
   color: ${tcPurple};
+  display: flex;
   span {
     padding: 0 16px 0 8px;
   }
