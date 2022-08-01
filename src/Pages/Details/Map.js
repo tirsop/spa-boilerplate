@@ -2,6 +2,9 @@ import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-load
 import { useEffect, useRef, useState } from 'react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { MapStyled } from './mapStyle.ts';
+
+
 // styles
 // import './Map.css'
 // tokens
@@ -79,6 +82,8 @@ export default function Map({ lon, lat }) {
   // }, [restaurants]);
 
   return (
-    <div ref={mapContainer} className="map-container" />
+    <MapStyled>
+      <div ref={mapContainer} className="map-container" />
+    </MapStyled>
   )
 }
