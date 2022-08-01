@@ -9,6 +9,7 @@ import { MapStyled } from './mapStyle.ts';
 // import './Map.css'
 // tokens
 mapboxgl.accessToken = process.env.RAZZLE_MAPBOX_TOKEN;
+console.log(mapboxgl.accessToken);
 
 
 // const Marker = ({ restaurant }) => {
