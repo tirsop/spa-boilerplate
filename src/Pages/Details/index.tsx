@@ -3,11 +3,12 @@ import { Helmet } from 'react-helmet';
 import { matchPath, useLocation } from 'react-router-dom';
 
 import { PageWrapper, PageContent, Headline } from 'Layouts';
+import { FaLocationArrow } from "react-icons/fa";
 
 import api from '../../utils/api';
 
 // styles
-import { Content, Banner } from './styles';
+import { DetailsWrapper, Content, Banner, Tags, Tag, Address } from './styles';
 
 const useRestaurant = () => {
   const [restaurant, setRestaurant] = React.useState(null);
@@ -32,12 +33,33 @@ export function Details(): JSX.Element {
 
   return (
     <PageWrapper>
-      <Headline>{restaurant.name[1]}</Headline>
       <PageContent>
-        <Content>
+        <DetailsWrapper>
           <Banner src={restaurant.banner_image} />
-          <pre>{JSON.stringify(restaurant, null, 2)}</pre>
-        </Content>
+          <Content>
+            <Headline>{restaurant.name[1]}</Headline>
+            <Tags>
+              {restaurant.cuisines && restaurant.cuisines.map(cuisine => (
+                <Tag key={cuisine}>{cuisine.charAt(0).toUpperCase() + cuisine.slice(1)}</Tag>
+              ))}
+            </Tags>
+
+            {restaurant.address &&
+              <Address>
+                <FaLocationArrow />
+                <div>
+                  <p>〒{restaurant.address.postal_code}</p>
+                  <p>{restaurant.address.region} {restaurant.address.street} {restaurant.address.street2}</p>
+                </div>
+              </Address>
+            }
+
+
+
+
+            <pre>{JSON.stringify(restaurant, null, 20)}</pre>
+          </Content>
+        </DetailsWrapper>
       </PageContent>
       <Helmet>
         <title>Restaurant Name</title>
