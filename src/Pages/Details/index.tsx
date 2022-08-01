@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { matchPath, useLocation } from 'react-router-dom';
 
+
+import Map from './Map.js'
 import { PageWrapper, PageContent, Headline } from 'Layouts';
 import { FaLocationArrow } from "react-icons/fa";
 
@@ -29,6 +31,8 @@ const useRestaurant = () => {
 export function Details(): JSX.Element {
   const restaurant = useRestaurant();
 
+
+
   if (!restaurant) return <div>Loading...</div>;
 
   return (
@@ -53,6 +57,7 @@ export function Details(): JSX.Element {
                 </div>
               </Address>
             }
+            <Map {...restaurant.geocode} />
 
 
 
