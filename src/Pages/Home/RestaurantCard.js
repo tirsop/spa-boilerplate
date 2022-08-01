@@ -22,7 +22,8 @@ export default function RestaurantCard({
 
   return (
     <Card to={`/${language}/restaurant/${slug}`}>
-      {searchImage ? (<Img src={searchImage} />) :
+      {searchImage ?
+        (<Img src={searchImage} />) :
         <ReplacementImg>
           <Logo
             symbolSize="30px"

@@ -67,6 +67,12 @@ export const Button = styled.button`
   width: 100%;
 `;
 
+export const ContainerCentered = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+`;
+
 // ----------------------------------- CARD ---------------------------------- //
 export const Card = styled(Link)`
   text-decoration: none;

@@ -1,16 +1,15 @@
 import { Spinner } from '@tablecheck/tablekit-spinner';
 import * as React from 'react'; // import useEffect, useContext, useState
+import { FaSearch } from "react-icons/fa";
 import { matchPath, useNavigate } from "react-router-dom";
 
 import { RestContext } from '../../Context/RestContext'
 // import { Button, ButtonAppearance, ButtonSize } from '@tablecheck/tablekit-button';
 import { useLocale } from '../../Hooks/useLocale'
 import api from "../../utils/api";
-import { FaSearch } from "react-icons/fa";
-
 
 // styles
-import { H1, FormWrapper, Button } from './styles.ts';
+import { H1, FormWrapper, Button, ContainerCentered } from './styles.ts';
 
 
 const getRestaurants = async (location) => {
@@ -95,7 +94,10 @@ export default function Form() {
         <FaSearch />
       </form>
       {error}
-      {isPending && <Spinner size="Large" />}
+      {isPending &&
+        <ContainerCentered>
+          <Spinner size="Large" />
+        </ContainerCentered>}
     </FormWrapper>
   )
 }

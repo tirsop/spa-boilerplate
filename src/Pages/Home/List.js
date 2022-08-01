@@ -14,7 +14,7 @@ export default function List() {
     <Grid>
       {restaurants ? restaurants.map(restaurant => (
         <RestaurantCard key={restaurant._id} {...restaurant} />
-      )) : "Please search something"}
+      )) : ""}
     </Grid>
   )
 }
