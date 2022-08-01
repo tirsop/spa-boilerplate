@@ -6,9 +6,11 @@ import { RestContext } from '../../Context/RestContext'
 // import { Button, ButtonAppearance, ButtonSize } from '@tablecheck/tablekit-button';
 import { useLocale } from '../../Hooks/useLocale'
 import api from "../../utils/api";
+import { FaSearch } from "react-icons/fa";
+
 
 // styles
-import { H1, FormWrapper } from './styles.ts';
+import { H1, FormWrapper, Button } from './styles.ts';
 
 
 const getRestaurants = async (location) => {
@@ -80,7 +82,7 @@ export default function Form() {
           placeholder="Area,cuisine or venue"
           required
         />
-        <button>Submit</button>
+        <Button>Submit</Button>
         {/* <Button
           size={ButtonSize.Regular2}
           shape="sharp"
@@ -90,6 +92,7 @@ export default function Form() {
           >
           Submit
         </Button> */}
+        <FaSearch />
       </form>
       {error}
       {isPending && <Spinner size="Large" />}

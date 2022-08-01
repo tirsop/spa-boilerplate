@@ -29,6 +29,7 @@ export const Grid = styled.div`
 export const H1 = styled.h1`
   font-size: 30px;
   font-weight: bold;
+  margin-bottom: 20px;
 `;
 export const FormWrapper = styled.div`
   form {
@@ -36,6 +37,15 @@ export const FormWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+
+    svg {
+      position: absolute;
+      top: 16px;
+      left: 15px;
+      color: #c8c8c8;
+      font-size: 19px;
+    }
   }
 
   input {
@@ -46,6 +56,12 @@ export const FormWrapper = styled.div`
   }
 `;
 
+export const Button = styled.button`
+  color: #fff;
+  background-color: #7935D2;
+  padding: 12px;
+  width: 100%;
+`;
 
 // ----------------------------------- CARD ---------------------------------- //
 export const Card = styled(Link)`
