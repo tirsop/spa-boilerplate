@@ -33,7 +33,8 @@ export const Grid = styled.div`
 export const H1 = styled.h1`
   font-size: 30px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin: 40px 0 20px;
+  line-height: 150%;
 `;
 export const FormWrapper = styled.div`
   form {
@@ -154,5 +155,20 @@ export const Price = styled.div`
   display: flex;
   span {
     padding: 0 16px 0 8px;
+  }
+`
+
+export const ContentCenter = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: ${slideUp} ${pageTransitionEasing} 0.5s;
+  img {
+    width: 300px;
+  }
+  div {
+    padding: 100px 0;
+
   }
 `
