@@ -62,7 +62,7 @@ export function Details(): JSX.Element {
 
 
 
-            <pre>{JSON.stringify(restaurant, null, 20)}</pre>
+            {/* <pre>{JSON.stringify(restaurant, null, 20)}</pre> */}
           </Content>
         </DetailsWrapper>
       </PageContent>
