@@ -1,6 +1,22 @@
-# TableCheck's SPA Boilerplate
+# TableCheck's Tirso Assignment
 
-DEMO: [tc-spa-boilerplate.netlify.app](https://tc-spa-boilerplate.netlify.app)
+DEMO: [tablecheck-tirso.netlify.app](https://tablecheck-tirso.netlify.app)
+
+<p align="center">
+  <img src="./public/img/iphone-mockup.png" width="300" />
+</p>
+
+## About .env file
+
+Create a .env file and set RAZZLE_API and RAZZLE_MAPBOX_TOKEN keys.
+
+## About packages
+
+Apart from the pre-installed packages in the boilerplate, the following packages were used:
+
+- axios
+- mapbox-gl
+- react-icons
 
 ## Features
 
