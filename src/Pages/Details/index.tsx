@@ -32,7 +32,6 @@ export function Details(): JSX.Element {
   const restaurant = useRestaurant();
 
 
-
   if (!restaurant) return <div>Loading...</div>;
 
   return (
@@ -49,8 +48,11 @@ export function Details(): JSX.Element {
             </Tags>
 
             {restaurant.address &&
-              <Address>
-                <FaLocationArrow />
+              <Address to={`https://www.google.com/maps/dir/${restaurant.address.region}`}>
+                {/* <FaLocationArrow /> */}
+                {/* <a href={googleMapsUrl}> */}
+                <img src="https://uploads-ssl.webflow.com/5dcadcbd9a526c0e1a357680/5f7348ec8d6e2779f5e1581f_googlemaps.png" alt="" />
+                {/* </a> */}
                 <div>
                   <p>〒{restaurant.address.postal_code}</p>
                   <p>{restaurant.address.region} {restaurant.address.street} {restaurant.address.street2}</p>

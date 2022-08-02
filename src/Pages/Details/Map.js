@@ -23,6 +23,7 @@ const Marker = () => {
 };
 
 export default function Map({ lon, lat }) {
+  // console.log(region);
   const mapContainer = useRef(null);
 
   useEffect(() => {

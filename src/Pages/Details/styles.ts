@@ -1,4 +1,6 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
+
 
 const tcPurple = '#7935D2';
 
@@ -31,17 +33,22 @@ export const Tag = styled.p`
   font-size: 12px;
   margin-right: 8px;
 `
-export const Address = styled.div`
+export const Address = styled(Link)`
+  text-decoration: none;
+  color: #000;
   border: 1px solid #c8c8c8;
   border-radius: 20px;
   padding: 0 16px;
-  width: 400px;
+  max-width: 400px;
   display: flex;
   align-items: center;
   gap: 24px;
   svg {
     font-size: 32px;
     color: ${tcPurple};
+  }
+  img {
+    width: 30px;
   }
   div {
     display: inline-block;
