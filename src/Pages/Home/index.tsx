@@ -1,10 +1,10 @@
+import { Logo } from '@tablecheck/tablekit-logo';
+import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { Outlet } from 'react-router-dom';
-import { Logo } from '@tablecheck/tablekit-logo';
 
 import { RestContext } from '../../Context/RestContext'
-import * as React from 'react';
 
 // components
 import Form from './Form';
@@ -20,8 +20,6 @@ export function Home(): JSX.Element {
 
   return (
     <HomeWrapper>
-      {/* <HomeHeadline>{t('attributes.titles.headline')}</HomeHeadline> */}
-
       <Form />
       <List />
       <ContentCenter>

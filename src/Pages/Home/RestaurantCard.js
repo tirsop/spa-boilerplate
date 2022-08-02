@@ -3,7 +3,6 @@ import { FaSun, FaMoon } from "react-icons/fa";
 
 import { useLocale } from '../../Hooks/useLocale';
 
-
 // styles
 import { Card, Img, Content, Name, Tags, Tag, Price, ReplacementImg } from './styles.ts';
 

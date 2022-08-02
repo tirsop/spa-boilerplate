@@ -1,26 +1,24 @@
 // Remeber to npn i mapbox-gl and include script/css in the index.html. Check REACT version, here 17
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
-import { useEffect, useRef, useState } from 'react';
+
+import { useEffect, useRef } from 'react';
 import React from 'react';
 import ReactDOM from "react-dom";
-import { MapStyled, MarkerContent } from './mapStyle.ts';
 import { FaMapMarkerAlt } from "react-icons/fa";
 
+import { MapStyled, MarkerContent } from './mapStyle.ts';
 
-
-// styles
-// import './Map.css'
 // tokens
 mapboxgl.accessToken = process.env.RAZZLE_MAPBOX_TOKEN;
 
 
-const Marker = () => {
+function Marker() {
   return (
     <MarkerContent>
       <FaMapMarkerAlt />
     </MarkerContent>
   );
-};
+}
 
 export default function Map({ lon, lat }) {
   // console.log(region);
@@ -29,7 +27,7 @@ export default function Map({ lon, lat }) {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/light-v10',  // light-v10, streets-v11
+      style: 'mapbox://styles/mapbox/light-v10',
       center: [lon, lat],
       zoom: 15,
     });

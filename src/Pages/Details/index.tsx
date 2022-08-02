@@ -1,14 +1,17 @@
+import { Logo } from '@tablecheck/tablekit-logo';
+import { Spinner } from '@tablecheck/tablekit-spinner';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
+import { FaPhone } from "react-icons/fa";
 import { matchPath, useLocation } from 'react-router-dom';
-import { Logo } from '@tablecheck/tablekit-logo';
 
 
-import Map from './Map.js'
 import { PageWrapper, PageContent, Headline } from 'Layouts';
-import { FaLocationArrow, FaPhone } from "react-icons/fa";
 
 import api from '../../utils/api';
+
+import Map from './Map.js'
+
 
 // styles
 import { DetailsWrapper, Content, Banner, Tags, Tag, Address, Phone, Summary, ContentCenter } from './styles';
@@ -32,8 +35,7 @@ const useRestaurant = () => {
 export function Details(): JSX.Element {
   const restaurant = useRestaurant();
 
-
-  if (!restaurant) return <div>Loading...</div>;
+  if (!restaurant) return <Spinner size="Large" />;
 
   return (
     <PageWrapper>
@@ -76,10 +78,6 @@ export function Details(): JSX.Element {
                 wordingSize="180px"
               />
             </ContentCenter>
-
-
-
-
             {/* <pre>{JSON.stringify(restaurant, null, 20)}</pre> */}
           </Content>
         </DetailsWrapper>

@@ -20,10 +20,10 @@ const getRestaurants = async (location) => {
   return searchRes.data.shops;
 };
 
+
 export default function Form() {
   const match = matchPath('/:locale/:search', window.location.pathname);
-  // const search = match?.params?.search || "";
-  const search = match && match.params && match.params.search || "";
+  const search = match && match.params && match.params.search || "";   // const search = match?.params?.search || "";
   const locale = useLocale();
   const navigate = useNavigate();
   const [location, setLocation] = React.useState(search)
@@ -82,15 +82,6 @@ export default function Form() {
           required
         />
         <Button>Submit</Button>
-        {/* <Button
-          size={ButtonSize.Regular2}
-          shape="sharp"
-          shouldFitContainer={true}
-          onClick={function noRefCheck() { }}
-          shape="sharp"
-          >
-          Submit
-        </Button> */}
         <FaSearch />
       </form>
       {error}
