@@ -4,9 +4,9 @@ const tcPurple = '#7935D2';
 
 export const MapStyled = styled.div`
   .map-container {
+    margin-top: 20px;
     width: 100%;
     height: 500px;
-    position: relative;
   }
 `;
 

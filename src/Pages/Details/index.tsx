@@ -1,16 +1,17 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { matchPath, useLocation } from 'react-router-dom';
+import { Logo } from '@tablecheck/tablekit-logo';
 
 
 import Map from './Map.js'
 import { PageWrapper, PageContent, Headline } from 'Layouts';
-import { FaLocationArrow } from "react-icons/fa";
+import { FaLocationArrow, FaPhone } from "react-icons/fa";
 
 import api from '../../utils/api';
 
 // styles
-import { DetailsWrapper, Content, Banner, Tags, Tag, Address } from './styles';
+import { DetailsWrapper, Content, Banner, Tags, Tag, Address, Phone, Summary, ContentCenter } from './styles';
 
 const useRestaurant = () => {
   const [restaurant, setRestaurant] = React.useState(null);
@@ -47,8 +48,17 @@ export function Details(): JSX.Element {
               ))}
             </Tags>
 
+            <Phone>
+              <FaPhone />
+              <span>{restaurant.phone_natl}</span>
+            </Phone>
+
+            <Summary>
+              {restaurant.content_body_translations[0].translation}
+            </Summary>
+
             {restaurant.address &&
-              <Address to={`https://www.google.com/maps/dir/${restaurant.address.region}`}>
+              <Address href={`https://www.google.com/maps?saddr=My+Location&daddr=${restaurant.geocode.lat},${restaurant.geocode.lon}`} target="_blank">
                 {/* <FaLocationArrow /> */}
                 {/* <a href={googleMapsUrl}> */}
                 <img src="https://uploads-ssl.webflow.com/5dcadcbd9a526c0e1a357680/5f7348ec8d6e2779f5e1581f_googlemaps.png" alt="" />
@@ -60,6 +70,12 @@ export function Details(): JSX.Element {
               </Address>
             }
             <Map {...restaurant.geocode} />
+            <ContentCenter>
+              <Logo
+                symbolSize="60px"
+                wordingSize="180px"
+              />
+            </ContentCenter>
 
 
 
