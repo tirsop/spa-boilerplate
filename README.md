@@ -1,4 +1,4 @@
-# TableCheck's Tirso Assignment
+# TableCheck's Assignment made by Tirso Pascual (https://tirsop.com)
 
 DEMO: [tablecheck-tirso.netlify.app](https://tablecheck-tirso.netlify.app)
 
