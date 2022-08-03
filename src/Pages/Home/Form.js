@@ -1,7 +1,7 @@
 import { Spinner } from '@tablecheck/tablekit-spinner';
 import * as React from 'react'; // import useEffect, useContext, useState
 import { FaSearch } from "react-icons/fa";
-import { matchPath, useNavigate } from "react-router-dom";
+import { matchPath, useLocation, useNavigate } from "react-router-dom";
 
 import { RestContext } from '../../Context/RestContext'
 // import { Button, ButtonAppearance, ButtonSize } from '@tablecheck/tablekit-button';
@@ -22,14 +22,14 @@ const getRestaurants = async (location) => {
 
 
 export default function Form() {
-  const match = matchPath('/:locale/:search', window.location.pathname);
+  const location = useLocation()
+  const match = matchPath('/:locale/:search', location.pathname);
   const search = match && match.params && match.params.search || "";   // const search = match?.params?.search || "";
   const locale = useLocale();
   const navigate = useNavigate();
-  const [location, setLocation] = React.useState(search)
+  const [place, setPlace] = React.useState(search)
   const [isPending, setIsPending] = React.useState(false)
   const [error, setError] = React.useState(null)
-
   const { setRestaurants } = React.useContext(RestContext)
 
   React.useEffect(() => {
@@ -59,15 +59,8 @@ export default function Form() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate(`/${locale}/${location}`, { replace: true });
+    navigate(`/${locale}/${place}`, { replace: true });
     setIsPending(true);
-    setError(null);
-    try {
-      const restaurants = await getRestaurants(location);
-      setRestaurants(restaurants)
-    }
-    catch (err) { setError(err.message) }
-    finally { setIsPending(false) }
   }
 
   return (
@@ -75,9 +68,9 @@ export default function Form() {
       <H1>Support your Local Restaurants ❤️</H1>
       <form onSubmit={handleSubmit}>
         <input
-          id="location"
-          onChange={(e) => setLocation(e.target.value)}
-          value={location}
+          id="place"
+          onChange={(e) => setPlace(e.target.value)}
+          value={place}
           placeholder="Area,cuisine or venue"
           required
         />
