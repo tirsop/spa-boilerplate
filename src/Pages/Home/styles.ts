@@ -27,6 +27,9 @@ export const Grid = styled.div`
   max-width: 900px;
   background: #fff;
   margin: 60px auto;
+  div .pepe {
+    font-size: 20px;
+  }
 `;
 
 // ----------------------------------- FORM ---------------------------------- //
@@ -163,6 +166,7 @@ export const ContentCenter = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
   animation: ${slideUp} ${pageTransitionEasing} 0.5s;
   img {
     width: 300px;

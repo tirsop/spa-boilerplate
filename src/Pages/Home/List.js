@@ -4,7 +4,7 @@ import { RestContext } from '../../Context/RestContext'
 
 import RestaurantCard from './RestaurantCard';
 // styles
-import { Grid } from './styles.ts';
+import { Grid, ContentCenter } from './styles.ts';
 
 
 export default function List() {
@@ -12,6 +12,10 @@ export default function List() {
 
   return (
     <Grid>
+
+      {restaurants &&
+        <ContentCenter>Here are our top recommendations:</ContentCenter>
+      }
       {restaurants ? restaurants.map(restaurant => (
         <RestaurantCard key={restaurant._id} {...restaurant} />
       )) : ""}

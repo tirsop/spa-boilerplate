@@ -81,7 +81,7 @@ export default function Form() {
           placeholder="Area,cuisine or venue"
           required
         />
-        <Button>Submit</Button>
+        <Button type="submit" >Search restaurants</Button>
         <FaSearch />
       </form>
       {error}
