@@ -33,7 +33,7 @@ export function Router({
         }
       >
         <Route index element={<Home />} />
-        <Route path="restaurant/:id" element={<Details />} />
+        <Route path="restaurant/:slug" element={<Details />} />
         <Route path=":search" element={<Home />} />
         <Route path={AppRoute.About} element={<About />} />
         <Route path={AppRoute.ReportIssue} element={<ReportIssue />} />

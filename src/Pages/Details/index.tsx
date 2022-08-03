@@ -56,7 +56,7 @@ export function Details(): JSX.Element {
             </Phone>
 
             <Summary>
-              {restaurant.content_body_translations[0].translation}
+              {restaurant.content_body_translations[0]?.translation}
             </Summary>
 
             {restaurant.address &&
