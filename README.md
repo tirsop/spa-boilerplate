@@ -1,6 +1,6 @@
 # TableCheck's Assignment made by Tirso Pascual (https://tirsop.com)
 
-DEMO: [tablecheck-tirso.netlify.app](https://tablecheck-tirso.netlify.app)
+DEMO: [tircheck.shop](https://tircheck.shop/en)
 
 <p align="center">
   <img src="./public/img/iphone-mockup.png" width="300" />
@@ -16,6 +16,7 @@ Apart from the pre-installed packages in the boilerplate, the following packages
 
 - axios
 - mapbox-gl
+- cypress
 - react-icons
 
 ## Features
