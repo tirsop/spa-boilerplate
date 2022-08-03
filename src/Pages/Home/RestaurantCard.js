@@ -39,12 +39,12 @@ export default function RestaurantCard({
         <Price>
           {(budgetLunchMin) &&
             <div>
-              <FaSun /><span>{budgetLunchMin} ~ {budgetLunchMax}</span>
+              <FaSun /><span>¥{Math.floor(budgetLunchMin)} ~ ¥{Math.floor(budgetLunchMax)}</span>
             </div>
           }
           {(budgetDinnerMin) &&
             <div>
-              <FaMoon /><span>{budgetDinnerMin} ~ {budgetDinnerMax}</span>
+              <FaMoon /><span>¥{Math.floor(budgetDinnerMin)} ~ ¥{Math.floor(budgetDinnerMax)}</span>
             </div>
           }
         </Price>
