@@ -1,4 +1,4 @@
-# TableCheck's Assignment
+# TableCheck's Restaurant Search Demo App
 
 SPA that allows users to look for restaurants in Japan and displays information about them and how to go.
 
@@ -24,6 +24,8 @@ Environment variables must be set in a .env file:
 
 - RAZZLE_API (TableCheck API)
 - RAZZLE_MAPBOX_TOKEN
+
+Deployment with Netlify.
 
 ## Features
 
