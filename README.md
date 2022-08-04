@@ -1,23 +1,28 @@
-# TableCheck's Assignment made by Tirso Pascual (https://tirsop.com)
+# TableCheck's Assignment
 
-DEMO: [tircheck.shop](https://tircheck.shop/en)
+SPA that allows users to look for restaurants in Japan and displays information about them and how to go.
+APP: [tircheck.shop](https://tircheck.shop/en)
 
 <p align="center">
   <img src="./public/img/iphone-mockup.png" width="300" />
 </p>
 
-## About .env file
+## Additional configuration
 
-Create a .env file and set RAZZLE_API and RAZZLE_MAPBOX_TOKEN keys.
+Restaurant's data is provided by the TableCheck API.
+Map is displayed for each restaurant with the Mapbox API.
 
-## About packages
-
-Apart from the pre-installed packages in the boilerplate, the following packages were used:
+Apart from the pre-installed packages in the boilerplate, the following were used:
 
 - axios
 - mapbox-gl
 - cypress
 - react-icons
+
+Environment variables must be set in a .env file:
+
+- RAZZLE_API (TableCheck API)
+- RAZZLE_MAPBOX_TOKEN
 
 ## Features
 
