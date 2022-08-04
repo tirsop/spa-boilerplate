@@ -1,10 +1,11 @@
 # TableCheck's Assignment
 
 SPA that allows users to look for restaurants in Japan and displays information about them and how to go.
+
 APP: [tircheck.shop](https://tircheck.shop/en)
 
 <p align="center">
-  <img src="./public/img/iphone-mockup.png" width="300" />
+  <img src="./public/img/iphone-mockup.png" width="250" />
 </p>
 
 ## Additional configuration
@@ -28,6 +29,7 @@ Environment variables must be set in a .env file:
 
 - Main tech stack: React, TypeScript, Emotion, i18n
 - Tablekit integration with FontAwesome icons and Dark Mode
+- Maps Integration with Mapbox
 - Basic localized routing
 - Basic layout with footer, top and side navs
 - Language Selection
